@@ -1,0 +1,25 @@
+{
+  env: {
+    root_dir: '/home-nfs2/local/VANDERBILT/dongc1/Desktop/Projects/Knee/Experiment_3_knee'
+  },
+
+  data: {
+    root_dir: '/home/local/VANDERBILT/dongc1/Desktop/Projects/Knee',
+    scale_size: 224,
+    crop_size: 224,
+    batch_size: 8,
+    num_workers: 4,
+  },
+
+  model: {
+    base_lr: 0.0001,
+    arch: 'resnet18',
+    output_channel: 3,
+    pretrained: True,
+    epoch_num: 500,
+    # Leave this as blank if not resume training, otherwise specify the path to the checkpoint.
+    # resume_path: '/nfs/masi/xuk9/src/reproduce_chexnet/pretrained/checkpoint'
+    resume_path: '',
+    checkpoint_interval: 10
+  }
+}
